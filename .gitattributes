@@ -1,2 +1,97 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+
+//colorMode(HSB,360,100,100);
+//noStroke();
+//fill(210,53,90);
+//rect(0,0,800,200);
+//fill(229,56,91);
+//rect(0,200,800,200);
+//fill(239,59,91);
+//rect(0,400,800,200);
+//fill(248,60,60);
+//rect(0,600,800,200);
+
+
+//stroke(0);
+//line (0,550,width,550); 
+//line (0,470,width,470);
+
+//stroke(0);
+//float x=0;
+//while(x<width) {
+ //point(x,552+ random (-50,50) );  //between -50,50
+  //point(x,472+ 20 *  noise (x/10 ) ); // noise between 0 and 6
+  //point(x,472+ 20 *  sin (x/30) ); //between -6 and 6 
+  //x=x+6;
+  
+//}
+Drop [] drops = new Drop [100];
+
+
+void setup() {
+  size(800,800); 
+  for (int i=0;i< drops.length;i++) {
+  drops[i] = new Drop ();
+  int x= 200;
+  int y=200;
+  }
+  
+}
+
+void draw() {
+  colorMode(HSB,360,100,100);
+noStroke();
+fill(210,53,90);
+rect(0,0,800,200);
+fill(229,56,91);
+rect(0,200,800,200);
+fill(239,59,91);
+rect(0,400,800,200);
+fill(248,60,60);
+rect(0,600,800,200);
+
+
+  
+ for (int i=0;i< drops.length;i++) {
+   drops[i].fall(); 
+   drops[i].show();
+ 
+  
+ }
+ fill (98);
+ ellipse(650,203,100,100);
+ 
+colorMode(RGB,219,213,219);
+fill(196,191,196);
+ ellipse (670,230,15,15);
+
+fill (196,191,196);
+ellipse (623,200,30,30);
+} 
+
+ class Drop {
+   float x= random (width);
+   float y= random   (-800,-100) ;
+   float yspeed= random (4,10) ; 
+    void fall () {
+      y=y+yspeed ; 
+      
+      if (y>height){
+        y=random   (-800,-100) ; 
+        
+      }
+      
+    }
+    
+    void show () {
+     stroke(0); 
+      line(x,y ,x,y+10) ;
+        
+      
+    }
+    
+   
+   
+ }
+   
+    
